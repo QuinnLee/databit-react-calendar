@@ -1,0 +1,10 @@
+{
+  "generator-react-webpack": {
+    "app-name": "databitCalender",
+    "architecture": false,
+    "styles-language": "sass",
+    "appName": "y",
+    "style": "scss",
+    "postcss": false
+  }
+}
