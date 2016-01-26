@@ -1,0 +1,43 @@
+.calendarchart-component {
+  height: 500px;
+}
+
+.line-chart {
+  fill: none;
+  .burn-line {
+    stroke: #000000;
+    stroke-dasharray: 5,10,5;
+    stroke-width: 2px;
+    fill-opacity: 0.5;
+  }
+  .new-line {
+    stroke: #3949ab;
+    stroke-width: 3px;
+  }
+  .student-line {
+    stroke: #7E8AA2;
+    stroke-width: 2px;
+  }
+  .date-line {
+    stroke: #7E8AA2;
+    fill-opacity: 0.5;
+    stroke-width: 1px;
+  }
+  .burn-node {
+    fill: #FFFFFF;
+    stroke: #000000;
+    stroke-width: 2;
+  }
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill: #000000;
+  font-family: sans-serif;
+  font-size: 11px;
+}
