@@ -145,11 +145,12 @@ class CalendarChartComponent extends React.Component {
       .orient('bottom');
   }
   render() {
-    let { highlightedDate, workDate, width, height } = this.props;
+    let { highlightedDate, workDate, width, height, today } = this.props;
     let { newLine, data, studentData, line, xScale, yScale } = this;
 
     let highlight;
     let xLine;
+    let todayLine;
 
     if(highlightedDate) {
       highlight = <circle className='burn-node' r='4.5' cx={xScale(highlightedDate.date)} cy={yScale(highlightedDate.yVal)} />;
@@ -158,6 +159,11 @@ class CalendarChartComponent extends React.Component {
     if(workDate) {
       let transform = `translate(${xScale(workDate.date)}, ${yScale(workDate.yVal)} )`;
       xLine= <line className='date-line' opacity={1} y1={0} y2={height} transform={transform} />
+    }
+
+    if(today) {
+      let transform = `translate(${xScale(today)}, ${0} )`;
+      todayLine = <line className='today-line' opacity={1} y1={0} y2={height} transform={transform} />
     }
 
     let circles =  data.map((d, i) => {
@@ -175,12 +181,15 @@ class CalendarChartComponent extends React.Component {
             <div className="col s12">
               <p>
                 Hover over the the graph to see what is due next and what you have done
+                <br/>
+                Today is the vertial dotted line
               </p>
             </div>
             <svg ref='svg' width={width} height={height} className='chart line-chart'>
               {highlight}
               {circles}
               {xLine}
+              {todayLine}
               <path d={line(newLine)} className='new-line' />
               <path d={line(data)} className='burn-line' />
               <path d={line(studentData)} className='student-line' />
