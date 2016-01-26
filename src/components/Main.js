@@ -102,7 +102,7 @@ class AppComponent extends React.Component {
         setHighlightDate={this.setHighlightDate}
         setHighlightWorkDate={this.setHighlightWorkDate}
         height={400}
-        width={560}
+        width={450}
       />;
     }
 

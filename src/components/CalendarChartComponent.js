@@ -139,7 +139,7 @@ class CalendarChartComponent extends React.Component {
 
     this.xAxis = d3.svg.axis()
       .scale(this.xScale)
-      .ticks(d3.time.day,10)
+      .ticks(d3.time.day, 5)
       .tickValues(_.map(this.data, 'date'))
       .tickFormat(timeFormat)
       .orient('bottom');
