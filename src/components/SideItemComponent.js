@@ -17,19 +17,22 @@ class SideItemComponent extends React.Component {
       list = modules.map((d) => {
         return (
           <li key={d}>
-            <p> Course: {d} </p>
-            <p> Number of Modules Done: { groupBy[d].length } </p>
+            <p className='light'>
+             Course: {d}
+             <br/>
+             Modules #: { groupBy[d].length }
+            </p>
           </li>
         );
       })
     }
 
     return (
-      <div className="col s122">
+      <div className="col s12">
         <div className='card side-item'>
           <div className='card-content'>
             <div className='card-title'>
-              <p>Assigments Finished: {date}</p>
+              <strong className='bold-text'>Assignments Done: {date}</strong>
             </div>
             <ul>
               {list}

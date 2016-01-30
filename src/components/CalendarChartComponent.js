@@ -28,7 +28,7 @@ class CalendarChartComponent extends React.Component {
 
     svg.append('g')
       .attr('class', 'axis')
-      .attr('transform', 'translate(10,' + (height - bottomMargin) + ')')
+      .attr('transform', 'translate(0,' + (height - bottomMargin) + ')')
       .call(this.xAxis);
 
     const handleMouseMove = this.handleMouseMove;
@@ -151,6 +151,7 @@ class CalendarChartComponent extends React.Component {
     let highlight;
     let xLine;
     let todayLine;
+    let text;
 
     if(highlightedDate) {
       highlight = <circle className='burn-node' r='4.5' cx={xScale(highlightedDate.date)} cy={yScale(highlightedDate.yVal)} />;
@@ -158,7 +159,7 @@ class CalendarChartComponent extends React.Component {
 
     if(workDate) {
       let transform = `translate(${xScale(workDate.date)}, ${yScale(workDate.yVal)} )`;
-      xLine= <line className='date-line' opacity={1} y1={0} y2={height} transform={transform} />
+      xLine= <line className='date-line' opacity={1} y1={0} y2={height+20} transform={transform} />
     }
 
     if(today) {
@@ -178,21 +179,17 @@ class CalendarChartComponent extends React.Component {
       <div className="calendarchart-component col s12">
         <div className='card'>
           <div className='card-content'>
-            <div className="col s12">
-              <p>
-                Hover over the the graph to see what is due next and what you have done
-                <br/>
-                Today is the vertial dotted line
-              </p>
-            </div>
-            <svg ref='svg' width={width} height={height} className='chart line-chart'>
-              {highlight}
-              {circles}
-              {xLine}
-              {todayLine}
-              <path d={line(newLine)} className='new-line' />
-              <path d={line(data)} className='burn-line' />
-              <path d={line(studentData)} className='student-line' />
+            <svg width={width} height={height+40} >
+              <svg ref='svg' width={width} height={height} className='chart line-chart'>
+                {highlight}
+                {circles}
+                {xLine}
+                <path d={line(newLine)} className='new-line' />
+                <path d={line(data)} className='burn-line' />
+                <path d={line(studentData)} className='student-line' />
+                {todayLine}
+              </svg>
+              <text  y={420} x={210} fill='black'> today </text>
             </svg>
           </div>
         </div>

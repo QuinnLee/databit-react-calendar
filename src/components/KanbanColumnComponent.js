@@ -2,6 +2,7 @@
 
 import React from 'react';
 import KanbanItemComponent from './KanbanItemComponent';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import _ from 'lodash';
 
 require('styles//KanbanColumn.sass');
@@ -33,9 +34,11 @@ class KanbanColumnComponent extends React.Component {
       });
     }
     return (
-      <div className="kanbancolumn-component">
-        { items }
-      </div>
+      <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={100} transitionLeaveTimeout={300}>
+        <div className="kanbancolumn-component">
+          { items }
+        </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }

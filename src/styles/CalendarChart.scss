@@ -1,19 +1,19 @@
 .calendarchart-component {
   height: 500px;
+  display: block;
+  margin: 0 auto;
 }
 
 .line-chart {
   fill: none;
   .burn-line {
-    stroke: #000000;
+    stroke: #b71c1c;
     stroke-dasharray: 5,10,5;
     stroke-width: 2px;
-    fill-opacity: 0.5;
   }
   .today-line {
-    stroke: #3949ab;
-    stroke-dasharray: 5,10,5;
-    stroke-width: 1px;
+    stroke: #37474f;
+    stroke-width: 2px;
     fill-opacity: 0.5;
   }
   .new-line {

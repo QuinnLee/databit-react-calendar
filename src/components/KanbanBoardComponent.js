@@ -52,10 +52,7 @@ class KanbanBoardComponent extends React.Component {
       <div className="kanbanboard-component col s12">
         <div className='card'>
           <div className='card-content'>
-            <span className='card-title'> Click on the remaining assigments when you finish</span>
-            <p>
-              The burndown chart will update when you finish an assigment
-            </p>
+            <span className='card-title'> Unfinished Assigments</span>
           </div>
         </div>
         <KanbanColumnComponent addNewWorkDone={this.props.addNewWorkDone} data={this.state.unfinished} type='unfinished'/>

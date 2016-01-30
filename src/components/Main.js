@@ -102,7 +102,7 @@ class AppComponent extends React.Component {
         setHighlightDate={this.setHighlightDate}
         setHighlightWorkDate={this.setHighlightWorkDate}
         height={400}
-        width={450}
+        width={550}
       />;
     }
 
@@ -124,9 +124,9 @@ class AppComponent extends React.Component {
           <div className='row'>
             <div className='card'>
               <div className='card-content'>
-                <span className="card-title">
+                <strong className="card-title">
                   Today is {today.toLocaleDateString()}
-                </span>
+                </strong>
                 <p>
                   Track the total work remaining and project the likelihood of finishing the course.
                   This help you manage its progress and respond accordingly.

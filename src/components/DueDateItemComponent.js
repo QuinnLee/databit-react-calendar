@@ -17,8 +17,11 @@ class DueDateItemComponent extends React.Component {
       list = modules.map((d) => {
         return (
           <li key={d}>
-            <p> Course: {d} </p>
-            <p> Number of Modules Due: <bold>{ groupBy[d].length }</bold> </p>
+            <p className='light'>
+             Course: {d}
+             <br/>
+             Modules #: { groupBy[d].length }
+            </p>
           </li>
         );
       });
@@ -29,7 +32,7 @@ class DueDateItemComponent extends React.Component {
         <div className='card side-item'>
           <div className='card-content'>
             <div className='card-title'>
-              <p>Assigments Finished: {date}</p>
+              <strong>Assignments Due:  {date}</strong>
             </div>
             <ul>
               {list}
